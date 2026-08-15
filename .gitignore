@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.env
+.env.*
+_original-assets/
+public/picture/practice/thumbs/*
+!public/picture/practice/thumbs/pr-*-t.jpg
