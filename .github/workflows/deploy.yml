@@ -36,8 +36,19 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Build
         run: pnpm build
+
+      - name: Verify portfolio images
+        shell: bash
+        run: |
+          test -f dist/picture/marketing/thumbs/mk-01-t.jpg
+          test -f dist/picture/marketing/full/mk-01.jpg
+          test -f dist/picture/practice/thumbs/pr-01-t.jpg
+          test -f dist/picture/practice/full/pr-01.jpg
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
