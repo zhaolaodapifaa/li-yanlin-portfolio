@@ -1664,6 +1664,10 @@ nav.paper-nav .links a.active {
 }
 
 @media (max-width: 900px) {
+  :root {
+    --grid-x: clamp(16px, 4vw, 28px);
+  }
+
   .chapter-rail {
     display: none;
   }
@@ -1787,22 +1791,24 @@ nav.paper-nav .links a.active {
   .grid-fixed,
   .grid-masonry {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
+    gap: clamp(8px, 2.2vw, 14px);
+    padding-right: var(--grid-x);
+    padding-left: var(--grid-x);
   }
 
   .gtm-project-card:nth-child(n) {
     margin-top: 0;
+    transform: none;
   }
 
   .gtm-project-card:nth-child(2),
   .gtm-project-card:nth-child(4) {
-    transform: translateY(24px);
+    transform: none;
   }
 
   .gtm-gallery.in-view {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2.2vw, 14px);
   }
 
   .gtm-gallery.in-view .gtm-project-card:nth-child(n) {
@@ -1811,7 +1817,7 @@ nav.paper-nav .links a.active {
 
   .gtm-gallery .reveal-card.in-view:nth-child(2),
   .gtm-gallery .reveal-card.in-view:nth-child(4) {
-    transform: translateY(24px) scale(1);
+    transform: translateY(0) scale(1);
   }
 
   .gtm-project-title {
@@ -1918,7 +1924,7 @@ nav.paper-nav .links a.active {
 
   .grid-fixed,
   .grid-masonry {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gtm-project-card:nth-child(2),
@@ -1929,8 +1935,8 @@ nav.paper-nav .links a.active {
   }
 
   .gtm-gallery.in-view {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2.2vw, 14px);
   }
 
   .cat-index {
